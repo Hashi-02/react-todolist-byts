@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [todos, setTodos] = useState<Todo[]>([]);
+  type Todo = {
+    inputValue: string;
+    id: number;
+    checked: boolean;
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h2>Todoリスト with TS</h2>
+        <form onSubmit={() => {}}>
+          <input type="text" onChange={() => {}} className="inputText" />
+          <input type="submit" value="作成" className="submitButton"></input>
+        </form>
+      </div>
     </div>
   );
 }
